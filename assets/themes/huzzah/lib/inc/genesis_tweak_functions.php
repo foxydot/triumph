@@ -21,11 +21,25 @@ function msdlab_pre_header(){
     print '<div class="pre-header">
         <div class="wrap">';
            do_action('msdlab_pre_header');
+           print '<div class="phone" itemprop="telephone"><i class="fa fa-phone"></i> '.get_option('msdsocial_phone').'</div>';
+           do_shortcode('[msd-social]');
     print '
         </div>
     </div>';
 }
 
+function msdlab_header_right(){
+    genesis_markup( array(
+            'html5'   => '<aside %s>',
+            'xhtml'   => '<div class="widget-area header-widget-area">',
+            'context' => 'header-widget-area',
+        ) );
+    dynamic_sidebar( 'header-right' );
+    genesis_markup( array(
+            'html5' => '</aside>',
+            'xhtml' => '</div>',
+        ) );
+}
  /**
  * Customize search form input
  */

@@ -9,6 +9,14 @@ add_theme_support( 'custom-background' );//* Add support for custom background
 add_action('wp_head','msdlab_add_apple_touch_icons');
 add_filter( 'genesis_search_text', 'msdlab_search_text' ); //customizes the serach bar placeholder
 add_filter('genesis_search_button_text', 'msdlab_search_button'); //customize the search form to add fontawesome search button.
+add_action('genesis_before_header','msdlab_pre_header');
+
+/**
+ * Move secodary nav into pre-header
+ */
+remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'msdlab_pre_header', 'genesis_do_subnav' );
+add_action('msdlab_pre_header','msdlab_header_right');
 
 /*** NAV ***/
 /**
@@ -37,7 +45,7 @@ add_filter( 'genesis_prev_link_text', 'msdlab_newer_link_text', 20);
 add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
 
 remove_action('genesis_footer','genesis_do_footer'); //replace the footer
-//add_action('genesis_footer','msdlab_do_social_footer');//with a msdsocial support one
+add_action('genesis_footer','msdlab_do_social_footer');//with a msdsocial support one
 
 /*** HOMEPAGE (BACKEND SUPPORT) ***/
 add_action('after_setup_theme','msdlab_add_homepage_hero_flex_sidebars'); //creates widget areas for a hero and flexible widget area

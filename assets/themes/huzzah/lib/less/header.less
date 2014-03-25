@@ -3,7 +3,8 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-  background-color: #fff;
+  background-color: @dkgrey;
+  border-top: lighten(@dkgrey,8%) solid 2px;
 }
 
 .site-header .wrap {
@@ -65,12 +66,17 @@ Site Header
 
 /* Logo, hide text */
 
-.header-image .site-header .wrap {
-  background: url(images/logo.png) no-repeat left;
-  padding: 0;
+.header-image .site-header{ 
+  .wrap {
+    padding: 0;
+  }
+  .wrap:after{
+    .clear;
+  }
 }
 
 .header-image .site-title a {
+  background: url(../img/logo.png) no-repeat left;
   float: left;
   min-height: 164px;
   width: 100%;

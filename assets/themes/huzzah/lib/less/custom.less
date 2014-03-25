@@ -1,0 +1,88 @@
+.pre-header{
+  background-color: @black;
+   .wrap{
+     .header-widget-area{
+       margin: 0 1rem;
+       width: 240px;
+       display: inline-block;
+       vertical-align: 0.8rem;
+       section.widget{
+         margin: 0 auto;
+         text-align: left;
+         .widget-wrap{
+           h4.widget-title{
+             margin: 0;
+             padding: 1rem;
+             cursor: pointer;
+           }
+           div.gform_wrapper{
+            width: 240px;
+             display: block;
+             position: absolute;
+             z-index: 400;
+              background: @white;
+              form{
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height 2s ease;
+                margin-top:0;
+                font-size: 1.2rem;
+                .gfield_checkbox{
+                  li{
+                    margin-top: 0;
+                  }
+                }
+                textarea{
+                  max-height: 100px;
+                }
+                button{
+                  width: 100%;
+                }
+              }
+           }
+           div.gform_wrapper:after{
+             .clear;
+           }
+           div.gform_wrapper.open_form{
+              .box-shadow(0 0 4px rgba(20,20,20,0.5));
+             form{
+               height: auto;
+               max-height: 1000px;
+             }
+           }
+         }
+       }
+     }
+     .phone{
+       display: inline-block;
+       color: @red;
+       font-weight: 700;
+       font-size: 1.4rem;
+       vertical-align: 1rem;
+     }
+     .social-media{
+       position: relative;
+       top: 0;
+       vertical-align: 0.4rem;
+       a, a:hover{
+         color: @white;
+         display: block;
+         float: left;
+         font-size: 2rem;
+         text-align: center;
+         width: 30px;
+         padding: 0.5rem 0;
+         text-decoration: none;
+       }
+       a.tw{
+         background-color:@twitter-blue;
+       }
+       a.fb{
+         background-color:@facebook-blue;
+       }
+       a.li{
+         background-color:@linkedin-blue;
+       }
+     }
+   }
+ }
