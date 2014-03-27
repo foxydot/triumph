@@ -1,57 +1,30 @@
+/*Preheader */
 .pre-header{
   background-color: @black;
+  line-height: 1rem;
    .wrap{
-     .header-widget-area{
-       margin: 0 1rem;
-       width: 240px;
-       display: inline-block;
-       vertical-align: 0.8rem;
-       section.widget{
-         margin: 0 auto;
-         text-align: left;
-         .widget-wrap{
-           h4.widget-title{
-             margin: 0;
-             padding: 1rem;
-             cursor: pointer;
-           }
-           div.gform_wrapper{
-            width: 240px;
-             display: block;
-             position: absolute;
-             z-index: 400;
-              background: @white;
-              form{
-                max-height: 0px;
-                overflow: hidden;
-                transition: max-height 2s ease;
-                margin-top:0;
-                font-size: 1.2rem;
-                .gfield_checkbox{
-                  li{
-                    margin-top: 0;
-                  }
-                }
-                textarea{
-                  max-height: 100px;
-                }
-                button{
-                  width: 100%;
-                }
-              }
-           }
-           div.gform_wrapper:after{
-             .clear;
-           }
-           div.gform_wrapper.open_form{
-              .box-shadow(0 0 4px rgba(20,20,20,0.5));
-             form{
-               height: auto;
-               max-height: 1000px;
+     nav {
+       width: auto;
+       display: block;
+       float: left;
+       ul.menu{
+         margin: 0;
+         padding: 0;
+         li{
+           a{
+             .fa-stack{
+               margin-right: 0.4rem;
+               color: @ltgrey;
              }
            }
          }
        }
+     }
+     .header-widget-area{
+       margin: 0 1rem;
+       width: 240px;
+       display: block;
+       vertical-align: 0.8rem;
      }
      .phone{
        display: inline-block;
@@ -64,6 +37,8 @@
        position: relative;
        top: 0;
        vertical-align: 0.4rem;
+       display: block;
+       float: left;
        a, a:hover{
          color: @white;
          display: block;
@@ -73,6 +48,19 @@
          width: 30px;
          padding: 0.5rem 0;
          text-decoration: none;
+         i.fa{
+          background: @dkgrey;
+          color: @white;
+          width: 2em;
+          height: 2em;
+          text-align: center;
+          line-height: 2em;
+          .border-radius(100%);
+          }
+          span{
+            text-indent: -9999px;
+            display: none;
+            }
        }
        a.tw{
          background-color:@twitter-blue;
@@ -83,6 +71,28 @@
        a.li{
          background-color:@linkedin-blue;
        }
-     }
+     }    
+     .search-form{
+      display: inline-block;
+      padding: 1rem 0 1rem 1rem;
+      position: relative;
+      input[type="search"] {
+        padding: 0.5rem;
+      }
+      input[type="submit"] {
+        .fontawesome;
+        font-size: 1.4rem;
+        border: 0;
+        clip: auto;
+        height: auto;
+        margin: 0;
+        padding: 0.5rem;
+        position: absolute;
+        width: auto;
+        background: none;
+        right: 0.5rem;
+        color: @medgrey;
+      }
+    }
    }
  }

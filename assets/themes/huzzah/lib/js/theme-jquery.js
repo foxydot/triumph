@@ -13,8 +13,14 @@ jQuery(document).ready(function($) {
 			return '<li class="separator">|</li>';
 		}
 	});
+	
+	$('.nav-secondary .wrap li.menu-item > a').prepend('<span class="fa-stack"> \
+  <i class="fa fa-circle fa-stack-2x"></i> \
+  <i class="fa fa-chevron-up fa-stack-1x fa-inverse"></i> \
+</span>');
+	
 	// add target="_blank" to all *external* 
-    var internal_urls = Array('truepoint.oc','72.52.131.35','truepointwealth.com','truepointinc.com');
+    var internal_urls = Array('triumph.adv','triumph.msdlab2.com');
     $('a').attr('target',function(){
         var url = $(this).attr('href');
         var target = $(this).attr('target');

@@ -19,8 +19,6 @@ Site Navigation
   border: none;
   color: @white;
   display: block;
-  padding: 28px 24px;
-  padding: 2.8rem 2.4rem;
   position: relative;
 }
 
@@ -35,7 +33,6 @@ Site Navigation
 }
 
 .genesis-nav-menu > .menu-item > a {
-  text-transform: uppercase;
 }
 
 .genesis-nav-menu .sub-menu {
@@ -125,48 +122,54 @@ Site Navigation
 .nav-primary {
   display: inline-block;
   float: right;
-  margin-top: 2em;
-  font-size: 1.4em;
-  margin-top: 2rem;
+  margin-top: 50px;
+  font-size: 14px;
+  margin-top: 5rem;
   font-size: 1.4rem;
-  li.menu-item{
-    a{
-      text-transform: uppercase;
-      color: @white;
-    }
-    .sub-menu{
-      border: 2px solid @ltgrey;
-      background-color: @white;
-      li.menu-item{
+  ul{
+    margin-bottom: 0;
+    li.menu-item{
+      a{
+        text-transform: uppercase;
+        font-weight: 700;
+        color: @white;
+        padding: 6px 20px;
+        padding: 0.6rem 2rem;
+      }
+      .sub-menu{
+        border: 2px solid @ltgrey;
         background-color: @white;
-        a{
-          background-color: none;
-          border: none;
+        li.menu-item{
+          background-color: @white;
+          a{
+            background-color: none;
+            border: none;
+          }
+        }
+        li:hover>a{
+          background-color: @ltgrey;
+          color: @red;
+          text-decoration: none;
         }
       }
-      li:hover>a{
-        background-color: @ltgrey;
-        color: @red;
+    }
+    li:hover{
+      background-color: @ltgrey;
+      a, a:hover{
+        color:@dkgrey;
         text-decoration: none;
-      }
+        }
     }
-  }
-  li:hover{
-    background-color: @ltgrey;
-    a, a:hover{
-      color:@dkgrey;
-      text-decoration: none;
+    li.menu-item.home-btn, li.menu-item.cart-btn{
+      a{
+        background: @red;
+        color: lighten(@red,30%);
+        border-radius: 30px;
+        padding: 1rem 1.4rem;
       }
-  }
-  li.menu-item.home-btn, li.menu-item.cart-btn{
-    a{
-      background: @red;
-      color: lighten(@red,30%);
-      border-radius: 30px;
-      padding: 1rem 1.4rem;
-    }
-    a:hover{
-      color: @white;
+      a:hover{
+        color: @white;
+      }
     }
   }
 }
@@ -178,19 +181,24 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-secondary {
-  padding: 0.5rem 0;
+  padding: 0;
   .wrap{
     li.menu-item{
       width:auto;
       position: relative;
+      background: @dkgrey;
+      height: 30px;
+      margin-left: -0.4rem;
       >a{
-        font-size: 0.8em;
-        line-height: 1.2em;
-        padding: 0.5rem 1rem;
-        color: @medgrey;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.4rem;
+        padding: 0.7rem 4rem 0.7rem 1rem;
+        color: @white;
       }
       >a:hover{
-        color:@orange;
+        color:@ltgrey;
+        text-decoration: none;
       }
       ul{
         display: none;
@@ -215,6 +223,7 @@ Site Navigation
     }
     li.menu-item.last-child{
       border: 0;
+      background: @medgrey;
     }
     li:hover{
       ul{
