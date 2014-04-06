@@ -49,8 +49,8 @@ Site Navigation
 }
 
 .genesis-nav-menu .sub-menu a {
-  background-color: #fff;
-  border: 1px solid #eee;
+  background-color: @white;
+  border: 1px solid @vltgrey;
   border-top: none;
   font-size: 14px;
   font-size: 1.4rem;
@@ -137,19 +137,59 @@ Site Navigation
         padding: 0.6rem 2rem;
       }
       .sub-menu{
-        border: 2px solid @ltgrey;
-        background-color: @white;
+          background-color: @ltgrey;
         li.menu-item{
-          background-color: @white;
           a{
-            background-color: none;
+            text-transform: none;
+            font-size: 12px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            background-color: @ltgrey;
             border: none;
           }
+          >.sub-menu{
+            background-color: @vltgrey;
+            position: relative;
+            display: block;
+            left: 0;
+            opacity: 1;
+            margin: 0;
+            li.menu-item{
+            background-color: @vltgrey;
+              a{
+                width: 190px;
+                margin-left: 1rem;
+                padding-left: 10px;
+                background-color: @vltgrey;
+                border-bottom: 1px solid @ltgrey;
+              }
+              a:before{
+                content:'\f0da ';
+                .fontawesome;
+                margin-right: 0.5rem;
+                color: darken(@ltgrey,10%);
+              }
+            }
+            li.menu-item.last-child{
+              a{
+                border-bottom: 0;
+              }
+            }
+            li:hover{
+              background-color: @red;
+              a{
+                background-color: transparent;
+                border-bottom: 1px solid transparent;
+              }
+            }
+          }
         }
-        li:hover>a{
-          background-color: @ltgrey;
-          color: @red;
-          text-decoration: none;
+        li:hover{
+          >a:hover{
+            background-color: @red;
+            color: @white;
+            text-decoration: none;
+            }
         }
       }
     }

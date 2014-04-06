@@ -96,3 +96,94 @@
     }
    }
  }
+ .content-sidebar-wrap{
+   .header-image{
+     margin-bottom: 4rem;
+   }
+ }
+ //SIDEBAR
+ .sidebar{
+  .gc-testimonial-widget{
+    padding-bottom: 0;
+    background: @red;
+    #tcycle{
+      margin-bottom: 0;
+    }
+    .testimonial-widget{
+      border: 0;
+      background: none;
+      h5{
+        display: none;
+      }
+      .content{
+        .customserif;
+        color: @white;
+        font-style: italic;
+        p.first-child:before{
+          .pull-left;
+          content: '“ ';
+          font-size: 6rem;
+          opacity: 0.5;
+          width: 24px;
+          height: 24px;
+          margin: -12px 6px 12px 0;
+          font-style: normal;
+        }
+      }
+      .client{
+        color: @white;
+        .customsansserif;
+        text-transform: uppercase;
+        .name{
+          font-weight: normal;
+          font-style: normal;
+        }
+      }
+    }
+  }
+}
+ //FOOTER
+.gform_widget{
+  border: 1px solid @ltgrey;
+  background-color: @vltgrey;
+  .widget-wrap{
+    .widget-title{
+      padding: 6px 10px;
+      padding: 0.6rem 1rem;
+      margin: 0;
+      color: @dkgrey;
+    }
+    .gform_wrapper{
+      margin: 0;
+      padding: 1rem;
+      .gform_body{
+        .gform_fields{
+          .gfield.first-child{
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.sidebar{}
+.footer-widgets{.gform_widget{
+  border: 1px solid @medgrey;
+  .widget-wrap{
+    .widget-title{
+      border-bottom: 2px solid @red;
+      text-align: center;
+      font-weight: 400;
+    }
+    .gform_wrapper{
+      .gform_footer{
+        input[type="submit"]{
+          background-color: @dkgrey;
+        }
+        input[type="submit"]:hover{
+          background-color: @red;
+        }
+      }
+    }
+  }
+}}
