@@ -6,6 +6,7 @@
 		<?php $mb->the_field('slideshow'); ?>
 	<p><label><strong><?php _e( "Choose a SlideDeck", $namespace ); ?>:</strong><br />
     <select name="<?php $mb->the_name(); ?>" id="<?php $mb->the_id(); ?>" class="widefat">
+        <option value="">Select...</option>
         <?php foreach( (array) $slidedecks as $slidedeck ): ?>
         <option value="<?php echo $slidedeck['id']; ?>"<?php $mb->the_select_state($slidedeck['id']); ?>><?php echo $slidedeck['title']; ?></option>
         <?php endforeach; ?>
