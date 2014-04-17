@@ -1,2 +1,54 @@
 @import 'lesshat';
 @import 'mixins';
+#hp-top{
+  display: block;
+  margin-bottom: 2rem;
+  min-height: 400px;
+  min-height: 40rem;
+  .carousel{
+      margin-bottom: 0;
+      .item {
+        min-height: 400px;
+        min-height: 40rem;
+        .carousel-caption{
+          background: fade(@green,80%);
+          color: @white;
+          min-height: 120px;
+          .sd2-slide-title-inner{
+            font-size: 2.4em;
+            font-weight: bold;
+          }
+          .sd2-slide-text{
+            max-width: 960px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            p{
+              line-height: 1.5em;
+            }
+          }
+        }
+        .carousel-caption:before{
+          border-bottom: 36px solid fade(@green,80%);
+          border-left: 36px solid transparent;
+          border-right: 36px solid transparent;
+          content: "";
+          margin-left: -36px;
+          display: inline-block;
+          position: absolute;
+          top: -36px;
+        }
+      }
+      .carousel-control{
+        border: none;
+        background: none;
+        font-size: 300px;
+        height: 100px;
+        top: auto;
+        bottom: 20px;
+      }
+      .carousel-control.right{
+        left: auto;
+        right: 50px;
+      }
+    }
+}

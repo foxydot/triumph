@@ -119,7 +119,8 @@ if(class_exists('SlideDeckPlugin')){
             'template' => get_stylesheet_directory() . '/lib/template/slideshow-meta.php',
             'autosave' => TRUE,
             'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
-            'prefix' => '_msdlab_' // defaults to NULL
+            'prefix' => '_msdlab_', // defaults to NULL
+            'exclude_template' => 'front-page.php',
         ));
     }
     
