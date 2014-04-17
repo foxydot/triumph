@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 </span>');
 	
 	// add target="_blank" to all *external* 
-    var internal_urls = Array('triumph.adv','triumph.msdlab2.com');
+    var internal_urls = Array('triumph.adv','triumph.msdlab3.com');
     $('a').attr('target',function(){
         var url = $(this).attr('href');
         var target = $(this).attr('target');
