@@ -53,11 +53,13 @@ function msdlab_hero(){
  */
 function triumph_hero(){
     global $homepage_metabox;
-    
+    $id = 'homepage';
     print '<div id="hp-top">';
+    print '<div class="hp-top-background-block"></div>';
     $i = 0;
     while($homepage_metabox->have_fields('sliders')):
         $active = $i==0?' active':'';
+        $indicators .= '<li data-target="#myCarousel_'.$id.'" data-slide-to="'.$i.'" class="'.$active.'"></li>';
         $items .= '
         <div class="item'.$active.'">
            <div class="image_block" style="background: url('.$homepage_metabox->get_the_value('image').') center top no-repeat #000000;background-size: cover;">
@@ -88,7 +90,7 @@ function triumph_hero(){
         </div>';
         $i++;
     endwhile;
-    print msd_carousel_wrapper($items,array('id' => $id));
+    print msd_carousel_wrapper($items,array('id' => $id,'indicators' => $indicators));
     print '</div>';
 }
 
@@ -116,6 +118,27 @@ function msdlab_homepage_widgets(){
         dynamic_sidebar('homepage-widgets');
   	print '</div></div>';
 	print '</div>';
+}
+
+function triumph_homepage_widgets(){
+    global $features_metabox;
+    print '<div id="homepage-widgets" class="widget-area">';
+    print '<div class="wrap"><div class="row">';
+    $i = 0;
+    while($features_metabox->have_fields('features')):
+        print '<section class="col-md-4 col-sm-12 widget">
+            <div class="widget-wrap" style="background-image:url('.$features_metabox->get_the_value('color_image').')">
+                <div class="bw" style="background-image:url('.$features_metabox->get_the_value('bw_image').')">
+                    <div class="widget-text">
+                        <h4 class="widget-title">'.$features_metabox->get_the_value('title').'</h4>
+                        <div class="widget-content">'.apply_filters('the_content',$features_metabox->get_the_value('content')).'</div>
+                    </div>
+                </div>
+            </div>
+        </section>';
+    endwhile;
+    print '</div></div>';
+    print '</div>';
 }
 
 /**
@@ -229,7 +252,7 @@ add_action('admin_footer','homepage_footer_hook');
 //add_action( 'admin_print_scripts', 'homepage_metabox_styles' );
 
 function add_homepage_metaboxes(){
-    global $post,$homepage_metabox;
+    global $post,$homepage_metabox,$features_metabox;
     $homepage_metabox = new WPAlchemy_MetaBox(array
     (
         'id' => '_homepage',
@@ -243,12 +266,26 @@ function add_homepage_metaboxes(){
         'prefix' => '_msdlab_', // defaults to NULL
         'include_template' => 'front-page.php',
     ));
+    $features_metabox = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_homepage_features',
+        'title' => 'Home Page Features',
+        'types' => array('page'),
+        'context' => 'normal', // same as above, defaults to "normal"
+        'priority' => 'high', // same as above, defaults to "high"
+        'template' => get_stylesheet_directory() . '/lib/template/metabox-features.php',
+        'autosave' => TRUE,
+        'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
+        'prefix' => '_msdlab_', // defaults to NULL
+        'include_template' => 'front-page.php',
+    ));
 }
 
 function homepage_footer_hook()
 {
     ?><script type="text/javascript">
         jQuery('#postdivrich').after(jQuery('#_homepage_metabox'));
+        jQuery('#_homepage_metabox').after(jQuery('#_homepage_features_metabox'));
     </script><?php
 }
 /* eof */

@@ -16,7 +16,7 @@ add_action('genesis_after_header','triumph_hero');
 //add_action('genesis_after_header','msd_call_to_action');
 //move footer and add three homepage widgets
 remove_action('genesis_before_footer','genesis_footer_widget_areas');
-add_action('genesis_before_footer','msdlab_homepage_widgets');
+add_action('genesis_before_footer','triumph_homepage_widgets');
 add_action('genesis_before_footer','genesis_footer_widget_areas');
 /**
  * long scrollie

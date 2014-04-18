@@ -86,14 +86,21 @@ function msd_carousel_wrapper($slides,$params = array()){
     extract( array_merge( array(
     'id' => NULL,
     'navleft' => '‹',
-    'navright' => '›'
+    'navright' => '›',
+    'indicators' => FALSE
     ), $params ) );
-    return '
-<div class="carousel slide" id="myCarousel_'.$id.'">
-    <div class="carousel-inner">'.($slides).'</div>
-    <a data-slide="prev" href="#myCarousel_'.$id.'" class="left carousel-control">'.$navleft.'</a>
-    <a data-slide="next" href="#myCarousel_'.$id.'" class="right carousel-control">'.$navright.'</a>
+    $ret = '
+<div class="carousel carousel-fade slide" id="myCarousel_'.$id.'">';
+    if($indicators){
+        $ret .= '<ol class="carousel-indicators">'.$indicators.'</ol>';
+    }
+    $ret .= '<div class="carousel-inner">'.($slides).'</div>
+    <div class="carousel-controls">
+        <a data-slide="prev" href="#myCarousel_'.$id.'" class="left carousel-control">'.$navleft.'</a>
+        <a data-slide="next" href="#myCarousel_'.$id.'" class="right carousel-control">'.$navright.'</a>
+    </div>
 </div>';
+    return $ret;
 }
 
 /* Slideshow Support */

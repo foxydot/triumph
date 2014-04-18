@@ -3,17 +3,45 @@
 #hp-top{
   display: block;
   margin-bottom: 2rem;
-  min-height: 400px;
-  min-height: 40rem;
+  min-height: 785;
+  min-height: 78.5rem;
+  .hp-top-background-block{
+   position: absolute;
+   width: 100%;
+   z-index: -400;
+   display: block;
+   height: 600px;
+   background-color: @black;
+ }
   .carousel{
       margin-bottom: 0;
+      .carousel-indicators{
+        top: 570px;
+        bottom: auto;
+        z-index: 100;
+        li{
+          border: 2px solid @black;
+          margin: 0 0.3rem;
+          background-color: @white;
+          height: 12px;
+          width: 12px;
+        }
+        li.active{
+          background-color: @red;
+        }
+      }
       .item {
         min-height: 400px;
         min-height: 40rem;
+        .image_block_wrapper{
+          background-color: @black;
+        }
         .image_block{
+          margin: 0 auto;
           max-width: 1400px;
           min-height: 600px;
           position: relative;
+          background-color: @black;
           .quote_block{
              background: fade(@dkgrey,80%);
              color: @white;
@@ -29,15 +57,19 @@
             -ms-transition: max-height 500ms ease-in;
             -o-transition: max-height 500ms ease-in;
             transition: max-height 500ms ease-in;
+            p{
+              margin: 0;
+            }
             .quote{
               margin: 1.6rem 0 0 0;
-              font-weight: 700;
+              font-weight: 400;
               font-size: 2rem;
+              .customsansserif;
             }
             .attribution{
               font-weight: 500;
               font-size: 1rem;
-              margin: 0 0 1.6rem 0;
+              margin: 0 0 3.6rem 0;
             }
           }
         }
@@ -48,6 +80,7 @@
         }
         .content-sidebar-wrap{
           .content{
+            margin: 2rem 0 1rem 0;
             .entry{
               .entry-content{
                 a{
@@ -66,16 +99,110 @@
             }
           }
           .sidebar{
-            margin: 2rem 0 10rem 0;
+            margin: 2rem 0 1rem 0;
             border-left: 1px solid @vltgrey;
           }
         }
       }
-      .carousel-control{
-        border: none;
-        font-size: 200px;
-        height: 600px;
-        line-height: 2.5;
+      .carousel-controls{
+        max-width: 1400px;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        .carousel-control{
+          border: none;
+          font-size: 200px;
+          height: 600px;
+          line-height: 2.5;
+        }
+        .carousel-control.left{
+          background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0) 100%);
+        }
+        .carousel-control.right{
+          background-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0) 100%);
+        }
       }
     }
+  .carousel-fade {
+    .carousel-inner {
+      .item {
+        opacity: 0;
+        transition-property: opacity 500ms;
+      }
+  
+      .active {
+        opacity: 1;
+      }
+  
+      .active.left,
+      .active.right {
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+      }
+  
+      .next.left,
+      .prev.right {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#homepage-widgets{
+  margin-bottom: 30px;
+  .widget{
+    .widget-wrap{
+      height: 100%;
+      .bw{
+        min-height: 455px;
+        overflow: hidden;
+        position: relative;
+        .widget-text{
+          position: absolute;
+          bottom: 0;
+          max-height: 38px;
+          background-color: @medgrey;
+          color: @white;
+          padding: 1rem;
+          -webkit-transition: max-height 500ms ease-in;
+          -moz-transition: max-height 500ms ease-in;
+          -ms-transition: max-height 500ms ease-in;
+          -o-transition: max-height 500ms ease-in;
+          transition: max-height 500ms ease-in;
+          .widget-title{
+            font-weight: 700;
+          }
+          .widget-content{
+            a{
+              display: inline-block;
+              background: @red;
+              border: 1px solid @white;
+              color: @white;
+              padding: 0.4rem 1.6rem;
+              text-transform: uppercase;
+              font-weight: 700;
+            }
+            a:hover{
+              background: @medgrey;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .widget:hover{
+    .widget-wrap{
+      .bw{
+        .widget-text{
+          max-height: 455px;
+          background-color: @red;
+        }
+      }
+    }
+  }
 }
