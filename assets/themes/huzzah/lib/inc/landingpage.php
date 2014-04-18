@@ -23,7 +23,8 @@ function add_landingpage_metaboxes(){
         'template' => get_stylesheet_directory() . '/lib/template/metabox-landingpage.php',
         'autosave' => TRUE,
         'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
-        'prefix' => '_msdlab_' // defaults to NULL
+        'prefix' => '_msdlab_', // defaults to NULL
+        'include_template' => 'template-landingpage.php',
     ));
 }
 

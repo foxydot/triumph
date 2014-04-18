@@ -41,11 +41,55 @@ function msdlab_add_homepage_callout_sidebars(){
  * Add a hero space with the site description
  */
 function msdlab_hero(){
-	if(is_active_sidebar('homepage-top')){
-		print '<div id="hp-top">';
-		dynamic_sidebar('homepage-top');
-		print '</div>';
-	} 
+    if(is_active_sidebar('homepage-top')){
+        print '<div id="hp-top">';
+        dynamic_sidebar('homepage-top');
+        print '</div>';
+    } 
+}
+
+/**
+ * Add a hero space with the site description
+ */
+function triumph_hero(){
+    global $homepage_metabox;
+    
+    print '<div id="hp-top">';
+    $i = 0;
+    while($homepage_metabox->have_fields('sliders')):
+        $active = $i==0?' active':'';
+        $items .= '
+        <div class="item'.$active.'">
+           <div class="image_block" style="background: url('.$homepage_metabox->get_the_value('image').') center top no-repeat #000000;background-size: cover;">
+               <div class="quote_block">
+                  <div class="wrap">
+                    <div class="quote">'.apply_filters('the_content',$homepage_metabox->get_the_value('quote')).'</div>
+                    <div class="attribution">'.$homepage_metabox->get_the_value('attribution').'</div>
+                  </div>
+               </div>
+           </div>
+           <div class="wrap">
+               <div class="content-sidebar-wrap row">
+                <main itemprop="mainContentOfPage" role="main" class="content col-md-9 col-sm-12">
+                    <article itemtype="http://schema.org/CreativeWork" itemscope="itemscope" class="page entry">
+                        <header class="entry-header">
+                            <h1 itemprop="headline" class="entry-title">'.$homepage_metabox->get_the_value('title').'</h1> 
+                        </header>
+                        <div itemprop="text" class="entry-content">
+                            '.apply_filters('the_content',$homepage_metabox->get_the_value('content')).'
+                        </div>
+                    </article>
+                </main>
+                <aside itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="sidebar sidebar-primary widget-area col-md-3 hidden-sm hidden-xs">
+                    '.apply_filters('the_content',$homepage_metabox->get_the_value('sidebar')).'
+                </aside>
+                </div>
+            </div>
+        </div>';
+        $i++;
+    endwhile;
+    print msd_carousel_wrapper($items,array('id' => $id));
+    print '</div>';
 }
 
 /**
@@ -171,3 +215,40 @@ function register_taxonomy_scrollie() {
 
     register_taxonomy( 'msdlab_scrollie', array('page'), $args );
 }   
+
+if(!class_exists('WPAlchemy_MetaBox')){
+    include_once (WP_CONTENT_DIR.'/wpalchemy/MetaBox.php');
+}
+global $wpalchemy_media_access;
+if(!class_exists('WPAlchemy_MediaAccess')){
+    include_once (WP_CONTENT_DIR.'/wpalchemy/MediaAccess.php');
+}
+$wpalchemy_media_access = new WPAlchemy_MediaAccess();
+add_action('init','add_homepage_metaboxes');
+add_action('admin_footer','homepage_footer_hook');
+//add_action( 'admin_print_scripts', 'homepage_metabox_styles' );
+
+function add_homepage_metaboxes(){
+    global $post,$homepage_metabox;
+    $homepage_metabox = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_homepage',
+        'title' => 'Home Page Sliders',
+        'types' => array('page'),
+        'context' => 'normal', // same as above, defaults to "normal"
+        'priority' => 'high', // same as above, defaults to "high"
+        'template' => get_stylesheet_directory() . '/lib/template/metabox-homepage.php',
+        'autosave' => TRUE,
+        'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
+        'prefix' => '_msdlab_', // defaults to NULL
+        'include_template' => 'front-page.php',
+    ));
+}
+
+function homepage_footer_hook()
+{
+    ?><script type="text/javascript">
+        jQuery('#postdivrich').after(jQuery('#_homepage_metabox'));
+    </script><?php
+}
+/* eof */

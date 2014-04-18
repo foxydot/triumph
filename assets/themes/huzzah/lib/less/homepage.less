@@ -10,45 +10,72 @@
       .item {
         min-height: 400px;
         min-height: 40rem;
-        .carousel-caption{
-          background: fade(@green,80%);
-          color: @white;
-          min-height: 120px;
-          .sd2-slide-title-inner{
-            font-size: 2.4em;
-            font-weight: bold;
-          }
-          .sd2-slide-text{
-            max-width: 960px;
-            margin: 0 auto;
-            font-size: 1.2em;
-            p{
-              line-height: 1.5em;
+        .image_block{
+          max-width: 1400px;
+          min-height: 600px;
+          position: relative;
+          .quote_block{
+             background: fade(@dkgrey,80%);
+             color: @white;
+             text-align: center;
+             width: 100%;
+             position: absolute;
+             bottom: 0;
+             max-height: 0;
+             display: block;
+             overflow: hidden;
+            -webkit-transition: max-height 500ms ease-in;
+            -moz-transition: max-height 500ms ease-in;
+            -ms-transition: max-height 500ms ease-in;
+            -o-transition: max-height 500ms ease-in;
+            transition: max-height 500ms ease-in;
+            .quote{
+              margin: 1.6rem 0 0 0;
+              font-weight: 700;
+              font-size: 2rem;
+            }
+            .attribution{
+              font-weight: 500;
+              font-size: 1rem;
+              margin: 0 0 1.6rem 0;
             }
           }
         }
-        .carousel-caption:before{
-          border-bottom: 36px solid fade(@green,80%);
-          border-left: 36px solid transparent;
-          border-right: 36px solid transparent;
-          content: "";
-          margin-left: -36px;
-          display: inline-block;
-          position: absolute;
-          top: -36px;
+        .image_block:hover{
+          .quote_block{
+            max-height: 600px;
+          }
+        }
+        .content-sidebar-wrap{
+          .content{
+            .entry{
+              .entry-content{
+                a{
+                  display: inline-block;
+                  background: @red;
+                  color: @white;
+                  padding: 0.4rem 1.6rem;
+                  text-transform: uppercase;
+                  font-weight: 700;
+                }
+                a:hover{
+                  background: @medgrey;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .sidebar{
+            margin: 2rem 0 10rem 0;
+            border-left: 1px solid @vltgrey;
+          }
         }
       }
       .carousel-control{
         border: none;
-        background: none;
-        font-size: 300px;
-        height: 100px;
-        top: auto;
-        bottom: 20px;
-      }
-      .carousel-control.right{
-        left: auto;
-        right: 50px;
+        font-size: 200px;
+        height: 600px;
+        line-height: 2.5;
       }
     }
 }
