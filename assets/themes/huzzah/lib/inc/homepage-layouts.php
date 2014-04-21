@@ -72,7 +72,7 @@ function triumph_hero(){
            </div>
            <div class="wrap">
                <div class="content-sidebar-wrap row">
-                <main itemprop="mainContentOfPage" role="main" class="content col-md-9 col-sm-12">
+                <main itemprop="mainContentOfPage" role="main" class="content col-md-8 col-sm-12">
                     <article itemtype="http://schema.org/CreativeWork" itemscope="itemscope" class="page entry">
                         <header class="entry-header">
                             <h1 itemprop="headline" class="entry-title">'.$homepage_metabox->get_the_value('title').'</h1> 
@@ -82,7 +82,7 @@ function triumph_hero(){
                         </div>
                     </article>
                 </main>
-                <aside itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="sidebar sidebar-primary widget-area col-md-3 hidden-sm hidden-xs">
+                <aside itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="sidebar sidebar-primary widget-area col-md-4 hidden-sm hidden-xs">
                     '.apply_filters('the_content',$homepage_metabox->get_the_value('sidebar')).'
                 </aside>
                 </div>
