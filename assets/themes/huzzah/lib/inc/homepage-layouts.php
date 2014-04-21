@@ -121,9 +121,11 @@ function msdlab_homepage_widgets(){
 }
 
 function triumph_homepage_widgets(){
-    global $features_metabox;
+    global $features_metabox,$map_metabox;
+    $map_metabox->the_meta();
     print '<div id="homepage-widgets" class="widget-area">';
-    print '<div class="wrap"><div class="row">';
+    print '<div class="wrap">
+    <div class="row">';
     $i = 0;
     while($features_metabox->have_fields('features')):
         print '<section class="col-md-4 col-sm-12 widget">
@@ -137,7 +139,18 @@ function triumph_homepage_widgets(){
             </div>
         </section>';
     endwhile;
-    print '</div></div>';
+    print '</div>
+    <div class="row">
+        <section class="col-md-12 widget map">
+            <div class="widget-wrap clearfix">
+                <div class="col-md-6 col-sm-12 map-content">
+                '.apply_filters('the_content',$map_metabox->get_the_value('content')).'
+                </div>
+                <div class="col-md-6 col-sm-12 map-image"></div>
+            </div>
+        </section>
+    </div>
+    </div>';
     print '</div>';
 }
 
