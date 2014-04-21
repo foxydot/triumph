@@ -252,7 +252,7 @@ add_action('admin_footer','homepage_footer_hook');
 //add_action( 'admin_print_scripts', 'homepage_metabox_styles' );
 
 function add_homepage_metaboxes(){
-    global $post,$homepage_metabox,$features_metabox;
+    global $post,$homepage_metabox,$features_metabox,$map_metabox;
     $homepage_metabox = new WPAlchemy_MetaBox(array
     (
         'id' => '_homepage',
@@ -279,6 +279,19 @@ function add_homepage_metaboxes(){
         'prefix' => '_msdlab_', // defaults to NULL
         'include_template' => 'front-page.php',
     ));
+    $map_metabox = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_homepage_map',
+        'title' => 'Home Page Map Area',
+        'types' => array('page'),
+        'context' => 'normal', // same as above, defaults to "normal"
+        'priority' => 'high', // same as above, defaults to "high"
+        'template' => get_stylesheet_directory() . '/lib/template/metabox-map.php',
+        'autosave' => TRUE,
+        'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
+        'prefix' => '_msdlab_', // defaults to NULL
+        'include_template' => 'front-page.php',
+    ));
 }
 
 function homepage_footer_hook()
@@ -286,6 +299,7 @@ function homepage_footer_hook()
     ?><script type="text/javascript">
         jQuery('#postdivrich').after(jQuery('#_homepage_metabox'));
         jQuery('#_homepage_metabox').after(jQuery('#_homepage_features_metabox'));
+        jQuery('#_homepage_features_metabox').after(jQuery('#_homepage_map_metabox'));
     </script><?php
 }
 /* eof */
