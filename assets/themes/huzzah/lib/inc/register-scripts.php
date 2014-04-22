@@ -50,7 +50,8 @@ function msdlab_add_scripts() {
             wp_enqueue_script('ie-fixes',get_stylesheet_directory_uri().'/lib/js/ie-jquery.js',array('jquery'));
         }
         if(is_front_page()){
-            wp_enqueue_script('msd-homepage-jquery',get_stylesheet_directory_uri().'/lib/js/homepage-jquery.js',array('jquery','bootstrap-jquery'));
+            wp_enqueue_script('snap',get_stylesheet_directory_uri().'/lib/js/snap.svg-min.js');
+            wp_enqueue_script('msd-homepage-jquery',get_stylesheet_directory_uri().'/lib/js/homepage-jquery.js',array('jquery','bootstrap-jquery','snap'));
         }
     }
 }

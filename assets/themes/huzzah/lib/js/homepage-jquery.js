@@ -11,4 +11,9 @@ jQuery(document).ready(function($) {
     },function(e){
         $(this).find('.bw').attr('style',bw_img);
     });
+    
+    var s = Snap('#the_map');
+    $('.state').hover(function(){
+        $(this).toFront();
+    },function(){});
 });

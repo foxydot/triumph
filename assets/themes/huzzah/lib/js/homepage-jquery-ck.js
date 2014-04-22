@@ -1,11 +1,1 @@
-jQuery(document).ready(function($) {
-    /*var numwidgets = $('#homepage-widgets section.widget').length;
-    $('#homepage-widgets').addClass('cols-'+numwidgets);
-    var cols = 12/numwidgets;
-    $('#homepage-widgets section.widget').addClass('col-sm-'+cols);
-    $('#homepage-widgets section.widget').addClass('col-xs-12');*/
-    
-    $('#homepage-widgets section.widget').hover(function(e){
-        $('')
-    });
-});
+jQuery(document).ready(function(e){var t;e("#homepage-widgets section.widget").hover(function(n){t=e(this).find(".bw").attr("style");e(this).find(".bw").attr("style","")},function(n){e(this).find(".bw").attr("style",t)});var n=Snap("#the_map");e(".state").hover(function(){e(this).toFront()},function(){})});
