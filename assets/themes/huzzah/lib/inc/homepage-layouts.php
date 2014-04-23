@@ -211,7 +211,7 @@ function display_map(){
 			<defs/>
 		</svg>
 ';
-return $map;
+//return $map;
         }
 
 /**
