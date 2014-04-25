@@ -23,7 +23,7 @@ class MSDSocial{
 		 */
 		$this->requireDir($this->the_path . '/inc');
 		wp_enqueue_style('msd-social-style',$this->the_url.'css/style.css');
-		wp_enqueue_style('msd-social-style-'.$this->icon_size,$this->the_url.'css/style'.$this->icon_size.'.css');
+		//wp_enqueue_style('msd-social-style-'.$this->icon_size,$this->the_url.'css/style'.$this->icon_size.'.css');
 		add_shortcode('msd-address',array(&$this,'get_address'));
 		add_shortcode('msd-bizname',array(&$this,'get_bizname'));
 		add_shortcode('msd-copyright',array(&$this,'get_copyright'));
