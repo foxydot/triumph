@@ -110,7 +110,6 @@ if (is_admin() && $template_file == 'front-page.php') { ?>
     <?php endwhile; ?>
     </div>
     <p style="margin-bottom:15px; padding-top:5px;"><a href="#" class="docopy-sliders button">Add Slider</a>
-    <a href="#" class="dodelete-sliders button">Remove All Sliders</a></p>
 </div>
 <script>
 jQuery(function($){

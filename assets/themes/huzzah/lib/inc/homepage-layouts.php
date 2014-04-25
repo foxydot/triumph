@@ -130,12 +130,12 @@ function triumph_homepage_widgets(){
     while($features_metabox->have_fields('features')):
         print '<section class="col-md-4 col-sm-12 widget">
             <div class="widget-wrap" style="background-image:url('.$features_metabox->get_the_value('color_image').')">
-                <div class="bw" style="background-image:url('.$features_metabox->get_the_value('bw_image').')">
+                <a href="'.$features_metabox->get_the_value('url').'" class="bw" style="background-image:url('.$features_metabox->get_the_value('bw_image').')">
                     <div class="widget-text">
                         <h4 class="widget-title">'.$features_metabox->get_the_value('title').'</h4>
                         <div class="widget-content">'.apply_filters('the_content',$features_metabox->get_the_value('content')).'</div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>';
     endwhile;

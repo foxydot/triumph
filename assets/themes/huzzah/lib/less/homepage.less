@@ -50,33 +50,33 @@
              width: 100%;
              position: absolute;
              bottom: 0;
-             max-height: 0;
+             height: 0%;
              display: block;
              overflow: hidden;
-            -webkit-transition: max-height 500ms ease-in;
-            -moz-transition: max-height 500ms ease-in;
-            -ms-transition: max-height 500ms ease-in;
-            -o-transition: max-height 500ms ease-in;
-            transition: max-height 500ms ease-in;
+            -webkit-transition: all 500ms ease-in;
+            -moz-transition: all 500ms ease-in;
+            -ms-transition: all 500ms ease-in;
+            -o-transition: all 500ms ease-in;
+            transition: all 500ms ease-in;
             p{
               margin: 0;
             }
             .quote{
               margin: 1.6rem 0 0 0;
               font-weight: 400;
-              font-size: 2rem;
+              font-size: 2.4rem;
               .customsansserif;
             }
             .attribution{
               font-weight: 500;
-              font-size: 1rem;
+              font-size: 1.2rem;
               margin: 0 0 3.6rem 0;
             }
           }
         }
         .image_block:hover{
           .quote_block{
-            max-height: 600px;
+            height: 25%;
           }
         }
         .content-sidebar-wrap{
@@ -125,6 +125,10 @@
           font-size: 200px;
           height: 600px;
           line-height: 2.5;
+          opacity: 0;
+        }
+        .carousel-control:hover,.carousel-control:focus{
+          opacity: 0.9;
         }
         .carousel-control.left{
           background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0px, rgba(0, 0, 0, 0) 100%);
@@ -153,14 +157,19 @@
   .widget{
     .widget-wrap{
       height: 100%;
+      background-repeat: no-repeat;
+      background-position: top center;
       .bw{
+        display: block;
         min-height: 455px;
         overflow: hidden;
         position: relative;
+        background-repeat: no-repeat;
+        background-position: top center;
         .widget-text{
           position: absolute;
           bottom: 0;
-          max-height: 38px;
+          max-height: 46px;
           background-color: @medgrey;
           color: @white;
           padding: 1rem;
@@ -171,6 +180,8 @@
           transition: max-height 500ms ease-in;
           .widget-title{
             font-weight: 700;
+            text-transform: none;
+            font-size: 2.1rem;
           }
           .widget-content{
             a{

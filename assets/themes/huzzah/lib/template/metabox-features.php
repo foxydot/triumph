@@ -37,6 +37,12 @@ if (is_admin() && $template_file == 'front-page.php') { ?>
             </div>
         </div>
         <div class="cell">
+        <?php $mb->the_field('url'); ?>
+        <label>URL to link to</label>            
+        <div class="input_container">
+            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/></div>
+        </div>
+        <div class="cell">
             <label>Feature Content</label>
             <div class="input_container">
                 <?php 
