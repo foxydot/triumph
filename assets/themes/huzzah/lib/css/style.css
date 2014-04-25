@@ -6811,8 +6811,11 @@ Site Footer
   margin: 0;
   padding: 1rem;
 }
-.gform_widget .widget-wrap .gform_wrapper .gform_body .gform_fields .gfield.first-child {
+.gform_widget .widget-wrap .gform_wrapper .gform_body .gform_fields .gfield {
   margin-top: 0;
+}
+.gform_widget .widget-wrap .gform_wrapper .gform_body .gform_fields .gfield .gfield_label {
+  display: none;
 }
 .footer-widgets .gform_widget {
   border: 1px solid #414141;
@@ -6821,6 +6824,9 @@ Site Footer
   border-bottom: 2px solid #ed1b26;
   text-align: center;
   font-weight: 400;
+}
+.footer-widgets .gform_widget .widget-wrap .gform_wrapper .gform_footer {
+  margin: 0;
 }
 .footer-widgets .gform_widget .widget-wrap .gform_wrapper .gform_footer input[type="submit"] {
   background-color: #292929;

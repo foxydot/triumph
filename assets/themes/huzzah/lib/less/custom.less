@@ -122,8 +122,11 @@
       padding: 1rem;
       .gform_body{
         .gform_fields{
-          .gfield.first-child{
+          .gfield{
             margin-top: 0;
+            .gfield_label{
+              display: none;
+            }
           }
         }
       }
@@ -141,6 +144,7 @@
     }
     .gform_wrapper{
       .gform_footer{
+        margin: 0;
         input[type="submit"]{
           background-color: @dkgrey;
         }
