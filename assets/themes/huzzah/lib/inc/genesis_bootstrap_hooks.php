@@ -1,7 +1,7 @@
 <?php
 /*** Bootstrappin **/
 
-add_filter( 'genesis_attr_site-inner', 'msdlab_bootstrap_site_inner', 10);
+//add_filter( 'genesis_attr_site-inner', 'msdlab_bootstrap_site_inner', 10);
 add_filter( 'genesis_attr_breadcrumb', 'msdlab_bootstrap_breadcrumb', 10);
 add_filter( 'genesis_attr_content-sidebar-wrap', 'msdlab_bootstrap_content_sidebar_wrap', 10);
 add_filter( 'genesis_attr_content', 'msdlab_bootstrap_content', 10);

@@ -21,7 +21,7 @@ function msd_post_image() {
     $slideshow_metabox->the_meta();
     $slideshow_id = $slideshow_metabox->get_the_value('slideshow');
     if($slideshow_id){
-        print '<section class="header-image">';
+        print '<section class="header-image col-md-12">';
         print do_shortcode('[SlideDeck2 id='.$slideshow_id.']');
         print '</section>';
         return;
