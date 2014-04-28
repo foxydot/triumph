@@ -62,6 +62,7 @@ function triumph_hero(){
         $indicators .= '<li data-target="#myCarousel_'.$id.'" data-slide-to="'.$i.'" class="'.$active.'"></li>';
         $items .= '
         <div class="item'.$active.'">
+        <div class="image_block_wrapper">
            <div class="image_block" style="background: url('.$homepage_metabox->get_the_value('image').') center top no-repeat #000000;background-size: cover;">
                <div class="quote_block">
                   <div class="wrap">
@@ -70,6 +71,7 @@ function triumph_hero(){
                   </div>
                </div>
            </div>
+         </div>
            <div class="wrap">
                <div class="content-sidebar-wrap row">
                 <main itemprop="mainContentOfPage" role="main" class="content col-md-8 col-sm-12">
@@ -128,10 +130,11 @@ function triumph_homepage_widgets(){
     <div class="row">';
     $i = 0;
     while($features_metabox->have_fields('features')):
-        print '<section class="col-md-4 col-sm-12 widget">
+        print '<section class="col-sm-4 col-xs-12 widget">
             <div class="widget-wrap" style="background-image:url('.$features_metabox->get_the_value('color_image').')">
                 <a href="'.$features_metabox->get_the_value('url').'" class="bw" style="background-image:url('.$features_metabox->get_the_value('bw_image').')">
                     <div class="widget-text">
+                        <img class="hidden-lg hidden-md hidden-sm pull-left" src="'.$features_metabox->get_the_value('color_image').'" />
                         <h4 class="widget-title">'.$features_metabox->get_the_value('title').'</h4>
                         <div class="widget-content">'.apply_filters('the_content',$features_metabox->get_the_value('content')).'</div>
                     </div>
@@ -143,10 +146,10 @@ function triumph_homepage_widgets(){
     <div class="row">
         <section class="col-md-12 widget map">
             <div class="widget-wrap clearfix">
-                <div class="col-md-6 col-sm-12 map-content">
+                <div class="col-sm-6 col-xs-12 map-content">
                 '.apply_filters('the_content',$map_metabox->get_the_value('content')).'
                 </div>
-                <div class="col-md-6 col-sm-12 map-image">'.display_map().'</div>
+                <div class="col-sm-6 hidden-xs map-image">'.display_map().'</div>
             </div>
         </section>
     </div>

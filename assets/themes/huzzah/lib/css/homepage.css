@@ -76,13 +76,24 @@
   min-height: 40rem;
 }
 #hp-top .carousel .item .image_block_wrapper {
-  background-color: #000000;
+  position: relative;
+  width: 100%;
+  /* desired width */
+}
+#hp-top .carousel .item .image_block_wrapper:before {
+  content: "";
+  display: block;
+  padding-top: 42.85%;
 }
 #hp-top .carousel .item .image_block {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   margin: 0 auto;
   max-width: 1400px;
-  min-height: 600px;
-  position: relative;
+  height: 100%;
+  position: absolute;
   background-color: #000000;
 }
 #hp-top .carousel .item .image_block .quote_block {
@@ -107,7 +118,7 @@
 #hp-top .carousel .item .image_block .quote_block .quote {
   margin: 1.6rem 0 0 0;
   font-weight: 400;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
 }
 #hp-top .carousel .item .image_block .quote_block .attribution {
@@ -156,7 +167,6 @@
 #hp-top .carousel .carousel-controls .carousel-control {
   border: none;
   font-size: 200px;
-  height: 600px;
   line-height: 2.5;
   opacity: 0;
 }
@@ -179,6 +189,9 @@
 }
 #homepage-widgets {
   margin-bottom: 30px;
+}
+#homepage-widgets .widget p {
+  margin: 0;
 }
 #homepage-widgets .widget .widget-wrap {
   height: 100%;
@@ -267,4 +280,47 @@
   fill: #ffffff;
   stroke: #ed1b26;
   z-index: 900;
+}
+/***MEDIA QUERIES***/
+@media only screen and (max-width: 1399px) {
+  #hp-top .hp-top-background-block {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #homepage-widgets .widget:not(.map) {
+    margin-bottom: 1rem;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap {
+    background: none !important;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap .bw {
+    background: none !important;
+    min-height: 0;
+    height: auto;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap .bw .widget-text {
+    position: relative;
+    max-height: 100%;
+    height: auto;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap .bw .widget-text img {
+    max-height: 10rem;
+    margin-right: 1rem;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap .bw .widget-text .widget-content {
+    max-height: auto;
+    height: auto;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap .bw .widget-text:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  #homepage-widgets .widget:not(.map) .widget-wrap .bw:hover {
+    text-decoration: none;
+    border: none;
+  }
 }

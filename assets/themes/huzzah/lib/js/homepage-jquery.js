@@ -16,8 +16,32 @@ jQuery(document).ready(function($) {
     },function(){
         $(this).parents('.carousel').find('.carousel-inner .item .quote_block').css('height','0%');
     });
+    
     $('.carousel').carousel({
       interval: 4000
     });
-
+    var container_h = $('.carousel').find('.carousel-inner .item.active .image_block').height();
+    $('.carousel .carousel-indicators').css('top',function(){
+        var top = container_h - ($(this).height()+10);
+        return top+'px';
+    });
+    $('.carousel .carousel-control').css('height',function(){
+        return container_h+'px';
+    });
+    $('#hp-top').css('min-height',function(){
+        return (container_h+260)+'px';
+    });
+    $( window ).resize(function() {
+    var container_h = $('.carousel').find('.carousel-inner .item.active .image_block').height();
+        $('.carousel .carousel-indicators').css('top',function(){
+            var top = container_h - ($(this).height()+10);
+            return top+'px';
+        });
+        $('.carousel .carousel-control').css('height',function(){
+            return container_h+'px';
+        });
+        $('#hp-top').css('min-height',function(){
+            return (container_h+250)+'px';
+        });
+    });
 });
