@@ -63,3 +63,12 @@ function msdlab_mailto_function($atts, $content){
 add_shortcode('columns','column_shortcode');
 
 add_shortcode('sitemap','msdlab_sitemap');
+
+add_shortcode('callout','msdlab_content_callout');
+function msdlab_content_callout($atts, $content){
+    extract( shortcode_atts( array(
+    'style' => 'graybox',
+    ), $atts ) );
+    $content = trim($content);
+    return '<div class="callout '.$style.'">'.$content.'</div>';
+}

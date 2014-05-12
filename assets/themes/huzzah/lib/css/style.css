@@ -6880,6 +6880,10 @@ Site Footer
   font-weight: 700;
   width: auto;
 }
+.entry-content .graybox {
+  padding: 1rem;
+  background-color: #e8e8e8;
+}
 .social-media {
   position: relative;
   top: 0;
