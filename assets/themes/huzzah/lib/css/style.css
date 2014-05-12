@@ -6880,6 +6880,9 @@ Site Footer
   font-weight: 700;
   width: auto;
 }
+.page-template-template-landingpage-php .entry-content .landingpage-tabs .tab-content .tab-pane table tbody tr td.first-child {
+  width: 168px;
+}
 .entry-content .graybox {
   padding: 1rem;
   background-color: #e8e8e8;
