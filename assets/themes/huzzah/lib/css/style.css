@@ -6857,6 +6857,10 @@ Site Footer
   -moz-columns: 100px 2;
   columns: 100px 2;
 }
+.site-footer address {
+  display: inline-block;
+  margin: 0;
+}
 .page-template-template-landingpage-php .entry-content .landingpage-tabs .btn-group .btn {
   width: auto;
   border-radius: 0;
