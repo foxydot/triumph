@@ -6852,6 +6852,11 @@ Site Footer
 .footer-widgets .gform_widget .widget-wrap .gform_wrapper .gform_footer input[type="submit"]:hover {
   background-color: #ed1b26;
 }
+.footer-widgets .widget_nav_menu ul.menu {
+  -webkit-columns: 100px 2;
+  -moz-columns: 100px 2;
+  columns: 100px 2;
+}
 .page-template-template-landingpage-php .entry-content .landingpage-tabs .btn-group .btn {
   width: auto;
   border-radius: 0;
