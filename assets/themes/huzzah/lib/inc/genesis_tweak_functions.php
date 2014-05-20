@@ -135,7 +135,6 @@ function msdlab_newer_link_text() {
         return $newerlink;
 }
 /*** FOOTER ***/
-
 /**
  * Footer replacement with MSDSocial support
  */
@@ -153,6 +152,8 @@ function msdlab_do_social_footer(){
     print '<div id="footer-left" class="footer-left social">'.$address.'</div>';
     print '<div id="footer-right" class="footer-right menu">'.$footer_menu.'</div>';
 }
+
+
 
 
 /**
