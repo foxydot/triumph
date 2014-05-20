@@ -10,13 +10,14 @@ add_theme_support( 'custom-background' );//* Add support for custom background
 add_action('wp_head','msdlab_add_apple_touch_icons');
 add_filter( 'genesis_search_text', 'msdlab_search_text' ); //customizes the serach bar placeholder
 add_filter('genesis_search_button_text', 'msdlab_search_button'); //customize the search form to add fontawesome search button.
-add_action('genesis_before_header','msdlab_pre_header');
+//add_action('genesis_before_header','msdlab_pre_header');
 
 /**
  * Move secodary nav into pre-header
  */
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'msdlab_pre_header', 'genesis_do_subnav' );
+add_action( 'genesis_header', 'genesis_do_subnav' );
+//add_action('msdlab_pre_header','msdlab_pre_header_social');
 add_action('msdlab_pre_header','msdlab_header_right');
 
 /*** NAV ***/

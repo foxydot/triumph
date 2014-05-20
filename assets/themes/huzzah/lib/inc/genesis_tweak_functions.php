@@ -22,14 +22,17 @@ function msdlab_pre_header(){
         <div class="wrap">
             <div class="pull-right">';
            do_action('msdlab_pre_header');
-           if(get_option('msdsocial_phone')!=''){
-                print '<div class="phone" itemprop="telephone"><i class="fa fa-phone"></i> '.get_option('msdsocial_phone').'</div>';
-           }
-           do_shortcode('[msd-social]');
     print '
             </div>
         </div>
     </div>';
+}
+
+function msdlab_pre_header_social(){
+    if(get_option('msdsocial_phone')!=''){
+        print '<div class="phone" itemprop="telephone"><i class="fa fa-phone"></i> '.get_option('msdsocial_phone').'</div>';
+   }
+   do_shortcode('[msd-social]');
 }
 
 function msdlab_header_right(){
