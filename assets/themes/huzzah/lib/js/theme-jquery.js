@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 </span>');
 	
 	// add target="_blank" to all *external* 
-    var internal_urls = Array('triumph.adv','triumph.msdlab3.com');
+    var internal_urls = Array('triumph.adv','triumph.msdlab3.com','triumphsigns.com','www.triumphsigns.com','triumphsigns.org','www.triumphsigns.org','triumphsigns.net','www.triumphsigns.net','triumphsigns.biz','www.triumphsigns.biz','triumphsigns.info','www.triumphsigns.info');
     $('a').attr('target',function(){
         var url = $(this).attr('href');
         var target = $(this).attr('target');
