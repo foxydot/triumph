@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
     });
     
     $('.carousel').carousel({
-      interval: 4000
+      interval: 8000
     });
     var container_h = $('.carousel').find('.carousel-inner .item.active .image_block').height();
     $('.carousel .carousel-indicators').css('top',function(){
